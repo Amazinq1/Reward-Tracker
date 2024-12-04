@@ -52,5 +52,18 @@ function resetForm() {
     document.getElementById("rewards").value = "";
     document.getElementById("uptimeError").classList.add("d-none");
     document.getElementById("rewardsError").classList.add("d-none");
-    document.getElementById("result").classList.add("d-none")
+    document.getElementById("result").textContent = "";
+}
+
+function toggleInfo() {
+    try {
+        const infoSection = document.getElementById("infoSection");
+        if (infoSection) {
+            infoSection.classList.toggle("d-none");
+        } else {
+            throw new Error("Info section element not found.");
+        }
+    } catch (error) {
+        console.error("An error occurred:", error.message);
+    }
 }
